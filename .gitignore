@@ -1,0 +1,46 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Environment variables
+.env
+
+# Chroma DB
+chroma/
+
+# LLM-specific files
+*.bin
+*.model
+*.ckpt
+*.pt
+*.h5
+*.pkl
+*.joblib
+*.onnx
+*.pb
+*.tflite
+*.hdf5
+*.npy
+*.npz
+*.nncf
+*.nncf.pb
+*.nncf.onnx
+*.nncf.tflite
+*.nncf.hdf5
+*.nncf.npy
+*.nncf.npz
+*.nncf.nncf
+*.nncf.nncf.pb
+*.nncf.nncf.onnx
+*.nncf.nncf.tflite
+*.nncf.nncf.hdf5
+*.nncf.nncf.npy
+*.nncf.nncf.npz
+*.nncf.nncf.nncf

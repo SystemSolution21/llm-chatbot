@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+pydantic
+langchain
+langchain-community
+chromadb
+sentence-transformers
+transformers
+torch
