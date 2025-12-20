@@ -1,4 +1,4 @@
-# app/settings.py
+# app/config.py
 
 # Import built-in libraries
 import os
@@ -14,6 +14,7 @@ load_dotenv()
 DATABASE_URL: str = str(os.getenv("DATABASE_URL"))
 VECTOR_DB_PATH: str = str(os.getenv("VECTOR_DB_PATH"))
 LLM_MODEL: str = str(os.getenv("LLM_MODEL"))
+EMBEDDING_MODEL: str = str(os.getenv("EMBEDDING_MODEL"))
 
 if not DATABASE_URL:
     raise ValueError("DATABASE_URL is not set")
@@ -23,4 +24,7 @@ if not VECTOR_DB_PATH:
     sys.exit(1)
 if not LLM_MODEL:
     raise ValueError("LLM_MODEL is not set")
+    sys.exit(1)
+if not EMBEDDING_MODEL:
+    raise ValueError("EMBEDDING_MODEL is not set")
     sys.exit(1)
