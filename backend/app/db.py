@@ -1,11 +1,9 @@
 # app/db.py
 
-# Import third-party libraries
+# Import local modules
+from app.config import DATABASE_URL
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
-
-# Import local modules
-from backend.app.config import DATABASE_URL
 
 # Create database engine and session
 engine = create_engine(DATABASE_URL)
