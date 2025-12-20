@@ -44,3 +44,6 @@ chroma/
 *.nncf.nncf.npy
 *.nncf.nncf.npz
 *.nncf.nncf.nncf
+
+# Frontend files
+node_modules/
