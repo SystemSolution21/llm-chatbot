@@ -4,7 +4,7 @@
 from app.db import SessionLocal
 from app.llm import generate
 from app.models import Conversation
-from app.rag import retrieve_context
+from app.rag import add_documents, retrieve_context
 from app.schemas import ChatRequest, ChatResponse
 
 # Import third-party libraries
@@ -46,3 +46,10 @@ def chat(req: ChatRequest, db: Session = Depends(get_db)) -> ChatResponse:
     db.refresh(conversation)
 
     return ChatResponse(conversation_id=str(conversation.id), answer=answer)
+
+
+@router.post("/ingest")
+def ingest(req: ChatRequest):
+    """Ingest a document into the vector database."""
+    add_documents([req.message])
+    return {"status": "ok", "message": "Document ingested"}

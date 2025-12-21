@@ -17,3 +17,7 @@ export interface FeedbackRequest {
 
 export const feedback = (data: FeedbackRequest) =>
   axios.post("http://localhost:8000/feedback", data);
+
+// Define the API ingest endpoint
+export const ingest = (message: string) =>
+  axios.post("http://localhost:8000/ingest", { message });

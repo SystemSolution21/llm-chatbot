@@ -18,3 +18,8 @@ vectordb = Chroma(persist_directory=VECTOR_DB_PATH, embedding_function=embedding
 def retrieve_context(query: str) -> str:
     docs = vectordb.similarity_search(query, k=3)
     return "\n".join([d.page_content for d in docs])
+
+
+def add_documents(texts: list[str]):
+    """Add documents to the vector database."""
+    vectordb.add_texts(texts)
