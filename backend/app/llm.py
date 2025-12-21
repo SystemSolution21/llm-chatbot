@@ -7,8 +7,10 @@ from app.config import LLM_MODEL
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 # Load the model and tokenizer
-tokenizer = AutoTokenizer.from_pretrained(LLM_MODEL)
-model = AutoModelForCausalLM.from_pretrained(LLM_MODEL, device_map="auto")
+tokenizer = AutoTokenizer.from_pretrained(LLM_MODEL, token=True)
+model = AutoModelForCausalLM.from_pretrained(
+    LLM_MODEL, device_map="auto", dtype="auto", token=True
+)
 
 # Create a pipeline for text generation
 llm = pipeline(

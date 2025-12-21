@@ -12,7 +12,7 @@ wheels/
 # Environment variables
 .env
 
-# Chroma DB
+# Vector database
 chroma/
 
 # LLM-specific files
