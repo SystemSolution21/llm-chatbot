@@ -2,10 +2,10 @@
 
 # Import local modules
 from app.config import EMBEDDING_MODEL, VECTOR_DB_PATH
+from langchain_chroma import Chroma
 
 # Import third-party modules
-from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_huggingface import HuggingFaceEmbeddings
 
 # Load the embedding model
 embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)

@@ -27,7 +27,7 @@ def get_db():
 def feedback(req: FeedbackRequest, db: Session = Depends(get_db)) -> dict[str, str]:
     """Add feedback to the database."""
 
-    fb = Feedback(req.model_dump())
+    fb = Feedback(**req.dict())
     db.add(fb)
     db.commit()
     return {"status": "ok"}
