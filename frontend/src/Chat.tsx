@@ -1,25 +1,22 @@
 // Chat.tsx
 
-// Import React
 import { useState } from "react";
-
-// Import API functions
 import { chat, feedback, ingest } from "./api";
+import { MessageInput } from "./components/MessageInput/MessageInput";
 
 // Define the Chat component
 export default function Chat() {
   const [msg, setMsg] = useState("");
   const [resp, setResp] = useState<any>(null);
 
-  const send = async () => {
-    const r = await chat(msg);
+  const send = async (text: string) => {
+    const r = await chat(text);
     setResp(r.data);
   };
 
-  const handleIngest = async () => {
-    await ingest(msg);
+  const handleIngest = async (text: string) => {
+    await ingest(text);
     alert("Text ingested into Knowledge Base!");
-    setMsg("");
   };
 
   const rate = (rating: number) => {
@@ -30,10 +27,8 @@ export default function Chat() {
   };
 
   return (
-    <div style={{ whiteSpace: "pre-wrap" }}>
-      <textarea value={msg} onChange={e => setMsg(e.target.value)} />
-      <button onClick={send}>Send</button>
-      <button onClick={handleIngest} style={{ marginLeft: "10px" }}>Ingest (RAG)</button>
+    <div>
+      <MessageInput onSend={send} onIngest={handleIngest} />
 
       {resp && (
         <>
