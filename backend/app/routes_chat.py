@@ -47,7 +47,7 @@ def chat(req: ChatRequest, db: Session = Depends(get_db)) -> ChatResponse:
 
     return ChatResponse(
         conversation_id=str(conversation.id),
-        answer=f"Question: {req.message}\n\n{answer}",
+        answer=f"Question: {req.message}\n{answer}",
     )
 
 
