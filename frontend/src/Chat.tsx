@@ -30,7 +30,7 @@ export default function Chat() {
   };
 
   return (
-    <div>
+    <div style={{ whiteSpace: "pre-wrap" }}>
       <textarea value={msg} onChange={e => setMsg(e.target.value)} />
       <button onClick={send}>Send</button>
       <button onClick={handleIngest} style={{ marginLeft: "10px" }}>Ingest (RAG)</button>

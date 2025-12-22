@@ -45,7 +45,10 @@ def chat(req: ChatRequest, db: Session = Depends(get_db)) -> ChatResponse:
     db.commit()
     db.refresh(conversation)
 
-    return ChatResponse(conversation_id=str(conversation.id), answer=answer)
+    return ChatResponse(
+        conversation_id=str(conversation.id),
+        answer=f"Question: {req.message}\n\n{answer}",
+    )
 
 
 @router.post("/ingest")
