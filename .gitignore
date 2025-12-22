@@ -13,7 +13,7 @@ wheels/
 .env
 
 # Vector database
-chroma/
+db/
 
 # LLM-specific files
 *.bin
