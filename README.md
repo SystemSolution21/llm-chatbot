@@ -45,8 +45,9 @@ llm-chatbot/
 │   │   ├── train_rl.py         # Script: Train PPO (RL)
 │   │   └── train_sft.py        # Script: Train SFT
 │   |
-│   └── chroma/                 # ChromaDB persistent storage
-|       └── chroma.sqlite3    # ChromaDB database file
+│   └── db/                     # ChromaDB persistent storage
+|       └── chroma/             # ChromaDB data directory
+|           └── chroma.sqlite3  # ChromaDB database file
 │   
 ├── frontend/
 │   ├── src/
