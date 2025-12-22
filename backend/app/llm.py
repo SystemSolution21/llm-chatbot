@@ -14,7 +14,7 @@ model = AutoModelForCausalLM.from_pretrained(
 
 # Create a pipeline for text generation
 llm = pipeline(
-    "text-generation",
+    task="text-generation",
     model=model,
     tokenizer=tokenizer,
     max_new_tokens=512,
