@@ -1,9 +1,8 @@
 .container {
-    white-space: pre-wrap;
     display: flex;
     flex-direction: row;
     gap: 0.8rem;
-    width: 80%;
+    width: 100%;
     margin: 0.8rem auto;
 }
 
@@ -12,9 +11,11 @@
     padding: 0.6rem 0.8rem;
     border: 1px solid #d1d5db;
     border-radius: 6px;
-    font-size: 1rem;
-    resize: vertical;
     font-family: inherit;
+    font-size: 1rem;
+    max-height: 100rem;
+    field-sizing: content;
+    resize: none;
     scrollbar-width: none;
 }
 
