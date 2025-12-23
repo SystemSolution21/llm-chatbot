@@ -45,16 +45,28 @@ llm-chatbot/
 │   │   ├── train_rl.py         # Script: Train PPO (RL)
 │   │   └── train_sft.py        # Script: Train SFT
 │   |
-│   └── db/                     # ChromaDB persistent storage
-|       └── chroma/             # ChromaDB data directory
-|           └── chroma.sqlite3  # ChromaDB database file
-│   
+│   ├── db/                     # ChromaDB persistent storage
+│   │   └── chroma/             # ChromaDB database files
+|   |       └── chroma.sqlite3  # ChromaDB database file
+|   |
+|   └── requirements.txt        # requirements.txt
+│
 ├── frontend/
+│   ├── node_modules/           # Node.js dependencies
 │   ├── src/
+│   │   ├── components/         # React components
+│   │   │   └── MessageInput/   # Message input component
+│   │   │       └── MessageInput.tsx         # Message input component
+│   │   │       └── MessageInput.module.css  # Message input component styles
+│   │   │
 │   │   ├── api.ts              # Axios API client
-│   │   ├── Chat.tsx            # Main Chat Component
 │   │   ├── App.tsx             # Main App Component
+│   │   ├── Chat.tsx            # Main Chat Component
+│   │   ├── global.d.ts         # TypeScript global declarations
 │   │   └── main.tsx            # Main entrypoint
+│   │   
+│   ├── static/
+│   │   └── index.css           # Global stylesheet
 │   |
 │   ├── index.html              # HTML entrypoint
 │   ├── node_modules/           # Node.js dependencies
@@ -72,7 +84,6 @@ llm-chatbot/
 ├── PostgreSQL.md               # Database setup commands
 ├── pyproject.toml              # Python project configuration
 ├── README.md                   # Project documentation
-├── requirements.txt            # Python dependency requirements
 └── uv.lock                     # uv lock file
 ```
 
@@ -93,9 +104,9 @@ CREATE DATABASE llm_chatbot_db;
 
 Navigate to the backend directory and install dependencies (assuming `requirements.txt` exists):
 
-```bash
+```pwsh
 cd backend
-pip install fastapi uvicorn sqlalchemy psycopg2-binary transformers trl torch langchain-chroma langchain-huggingface
+uv pip install fastapi uvicorn sqlalchemy psycopg2-binary transformers trl torch langchain-chroma langchain-huggingface
 
 # Run the server
 uvicorn app.main:app --reload
@@ -108,7 +119,8 @@ Navigate to the frontend directory:
 ```bash
 cd frontend
 npm install
-npm start
+npm run dev # for development
+npm start # for production
 ```
 
 ---
