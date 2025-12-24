@@ -8,6 +8,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 # Load the model and tokenizer
 tokenizer = AutoTokenizer.from_pretrained(LLM_MODEL, token=True)
+# Ensure a pad token is set, which is required for many generation models
+if tokenizer.pad_token is None:
+    tokenizer.pad_token = tokenizer.eos_token
+
 model = AutoModelForCausalLM.from_pretrained(
     LLM_MODEL, device_map="auto", dtype="auto", token=True
 )
@@ -19,6 +23,8 @@ llm = pipeline(
     tokenizer=tokenizer,
     max_new_tokens=512,
     return_full_text=False,
+    do_sample=True,
+    temperature=0.7,
 )
 
 
