@@ -72,6 +72,8 @@ llm-chatbot/
 │   ├── static/
 │   │   └── index.css           # Global stylesheet
 │   |
+│   ├── .env                    # Environment variables (Vite)
+│   ├── .env.example            # Example environment variables file
 │   ├── index.html              # HTML entrypoint
 │   ├── node_modules/           # Node.js dependencies
 │   ├── package.json            # Node.js package config
