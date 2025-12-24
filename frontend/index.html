@@ -11,58 +11,7 @@
     <link rel="stylesheet" href="static/index.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>LLM Chatbot with RAG & RLHF</h1>
-      <p>
-        This is a chatbot that uses RAG (Retrieval-Augmented Generation) and
-        RLHF (Reinforcement Learning with Human Feedback) to generate responses.
-      </p>
-      <h2>Features:</h2>
-      <h3>1. Interactive Chat & RAG</h3>
-      <ul>
-        <li>
-          <b>Chat Interface:</b> React-based UI for interacting with the LLM.
-        </li>
-        <li>
-          <b>Knowledge Ingestion:</b> Users can upload/ingest text snippets
-          directly from the UI into a Vector Database (ChromaDB).
-        </li>
-        <li>
-          <b>Context Retrieval:</b> The backend retrieves relevant context for
-          every query to ground the LLM's responses.
-        </li>
-      </ul>
-      <h3>2. Data Collection & Feedback</h3>
-      <ul>
-        <li>
-          <b>Conversation History:</b> User queries and model responses are
-          stored in PostgreSQL.
-        </li>
-        <li>
-          <b>User Feedback:</b> Users can rate responses (👍 / 👎), creating a
-          labeled dataset for training.
-        </li>
-      </ul>
-      <h3>3. Training Pipeline (RLHF)</h3>
-      <p>
-        The application includes three standalone scripts to fine-tune the model
-        based on collected data:
-      </p>
-      <ul>
-        <li>
-          <b>Supervised Fine-Tuning (SFT):</b>Fine-tunes the base model on
-          conversations with positive ratings.
-        </li>
-        <li>
-          <b>Reward Modeling:</b>Trains a classifier to predict human
-          preferences based on feedback history.
-        </li>
-        <li>
-          <b>PPO (Proximal Policy Optimization):</b>Uses Reinforcement Learning
-          to align the model's policy using the trained Reward Model.
-        </li>
-      </ul>
-    </div>
+    <div id="container"></div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script src="" async defer></script>
